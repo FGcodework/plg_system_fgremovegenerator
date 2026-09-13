@@ -1,4 +1,4 @@
-# Changelog – plg_system_fgremovegenerator
+﻿# Changelog – plg_system_fgremovegenerator
 
 ## 1.5.2 (2026-08-26)
 - Moved "Remove X-Powered-By header" from the `basic` fieldset into the `headers` fieldset, alongside "Remove X-Generator header". All three header toggles now live together, separate from the generator-meta-tag settings — UX/organization fix only, no behavior change.
@@ -24,7 +24,7 @@
 - Rebranded into the FG series as `plg_system_fgremovegenerator`
 - Namespace changed to `FG\Plugin\System\Fgremovegenerator`, class renamed to `Fgremovegenerator`
 - Added `declare(strict_types=1)`; `onAfterInitialise`/`onBeforeCompileHead` now type-hinted against `Joomla\Event\EventInterface` instead of the concrete `Event` class
-- Added `<updateservers>` block (points at `updates.xml` on the `master` branch of `ferino75/plg_system_fgremovegenerator`), with `<client>site</client>` declared on the plugin's `<update>` entry
+- Added `<updateservers>` block (points at `updates.xml` on the `master` branch of `FGcodework/plg_system_fgremovegenerator`), with `<client>site</client>` declared on the plugin's `<update>` entry
 - Declared `<php_minimum>8.0.0</php_minimum>`
 - Added GitHub-ready repo scaffolding: README.md with shields.io badges, LICENSE (GPL-2.0-or-later), .gitignore, assets/logo.png (navy/coral FG brand style, colors sampled from plg_fgeditorswitcher) + its generation script
 - Fixed logo colors to match the actual FG brand (navy gradient #081D32→#113758, coral #FF6B4A) after the first draft used the wrong palette

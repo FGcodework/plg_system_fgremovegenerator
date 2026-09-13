@@ -1,15 +1,15 @@
-<p align="center">
+﻿<p align="center">
   <img src="assets/logo.png" alt="FG Remove Generator logo" width="128" height="128">
 </p>
 
 <h1 align="center">FG Remove Generator</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/tag/ferino75/plg_system_fgremovegenerator?label=version&color=ff6b4a" alt="Version">
+  <img src="https://img.shields.io/github/v/tag/FGcodework/plg_system_fgremovegenerator?label=version&color=ff6b4a" alt="Version">
   <img src="https://img.shields.io/badge/Joomla-5%20%7C%206-1a6877?logo=joomla&logoColor=white" alt="Joomla 5/6">
   <img src="https://img.shields.io/badge/PHP-%3E%3D8.1-777bb4?logo=php&logoColor=white" alt="PHP 8.1+">
   <img src="https://img.shields.io/badge/license-GPL--2.0-green" alt="License">
-  <img src="https://img.shields.io/github/downloads/ferino75/plg_system_fgremovegenerator/total" alt="Downloads">
+  <img src="https://img.shields.io/github/downloads/FGcodework/plg_system_fgremovegenerator/total" alt="Downloads">
 </p>
 
 A native Joomla 5/6 system plugin that removes the Joomla **generator meta tag**
@@ -43,7 +43,7 @@ casual automated scanning).
 
 ## Installation
 
-1. Download the latest release ZIP from the [Releases](https://github.com/ferino75/plg_system_fgremovegenerator/releases) page.
+1. Download the latest release ZIP from the [Releases](https://github.com/FGcodework/plg_system_fgremovegenerator/releases) page.
 2. In Joomla admin: **System → Install → Extensions**, upload the ZIP.
 3. Enable the plugin: **System → Manage → Plugins → FG - Remove Generator**.
 4. Configure mode and header toggles as needed.

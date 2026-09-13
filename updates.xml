@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <updates>
     <update>
         <name>FG - Remove Generator</name>
@@ -8,10 +8,10 @@
         <folder>system</folder>
         <client>site</client>
         <version>1.5.2</version>
-        <infourl title="FG Remove Generator">https://github.com/ferino75/plg_system_fgremovegenerator</infourl>
+        <infourl title="FG Remove Generator">https://github.com/FGcodework/plg_system_fgremovegenerator</infourl>
         <targetplatform name="joomla" version="[56]\..*"/>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/ferino75/plg_system_fgremovegenerator/releases/download/v1.5.2/plg_system_fgremovegenerator_v1.5.2.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/FGcodework/plg_system_fgremovegenerator/releases/download/v1.5.2/plg_system_fgremovegenerator_v1.5.2.zip</downloadurl>
         </downloads>
         <tags>
             <tag>stable</tag>

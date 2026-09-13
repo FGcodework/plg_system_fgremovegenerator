@@ -1,6 +1,6 @@
-"""
+﻿"""
 FG brand logo generator for plg_system_fgremovegenerator (v2 - correct brand colors,
-sampled from ferino75/plg_fgeditorswitcher/assets/logo.png).
+sampled from FGcodework/plg_fgeditorswitcher/assets/logo.png).
 Navy gradient background (#081D32 -> #113758), coral (#FF6B4A) accent.
 Motif: a "tag" shape (meta/generator tag) with a coral "no/remove" prohibition slash.
 """

@@ -1,5 +1,8 @@
 ﻿# Changelog – plg_system_fgremovegenerator
 
+## 1.5.3 (2026-09-18)
+- Fixed JED naming convention violation: display name changed from "FG - Remove Generator" to "System - FG Remove Generator" (en) / "Systém - FG Odstránenie Generator" (sk). JED requires plugin names in the form "{Type} - {Extension Name}", where {Type} must be the plugin group (System, Content, ...) — not a brand prefix. Matches the convention already used in plg_content_fgautolightbox ("Content - FG AutoLightbox").
+
 ## 1.5.2 (2026-08-26)
 - Moved "Remove X-Powered-By header" from the `basic` fieldset into the `headers` fieldset, alongside "Remove X-Generator header". All three header toggles now live together, separate from the generator-meta-tag settings — UX/organization fix only, no behavior change.
 

@@ -5,7 +5,7 @@
     <creationDate>2026-07</creationDate>
     <copyright>(C) 2026 Fero</copyright>
     <license>GNU General Public License version 2 or later</license>
-    <version>1.5.2</version>
+    <version>1.5.3</version>
     <description>PLG_SYSTEM_FGREMOVEGENERATOR_XML_DESCRIPTION</description>
     <namespace path="src">FG\Plugin\System\Fgremovegenerator</namespace>
     <files>

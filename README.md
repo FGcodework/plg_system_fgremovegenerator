@@ -45,7 +45,7 @@ casual automated scanning).
 
 1. Download the latest release ZIP from the [Releases](https://github.com/FGcodework/plg_system_fgremovegenerator/releases) page.
 2. In Joomla admin: **System → Install → Extensions**, upload the ZIP.
-3. Enable the plugin: **System → Manage → Plugins → FG - Remove Generator**.
+3. Enable the plugin: **System → Manage → Plugins → System - FG Remove Generator**.
 4. Configure mode and header toggles as needed.
 
 ## Updates

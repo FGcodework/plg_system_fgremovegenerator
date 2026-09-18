@@ -7,7 +7,7 @@
 <p align="center">
   <img src="https://img.shields.io/github/v/tag/FGcodework/plg_system_fgremovegenerator?label=version&color=ff6b4a" alt="Version">
   <img src="https://img.shields.io/badge/Joomla-5%20%7C%206-1a6877?logo=joomla&logoColor=white" alt="Joomla 5/6">
-  <img src="https://img.shields.io/badge/PHP-%3E%3D8.1-777bb4?logo=php&logoColor=white" alt="PHP 8.1+">
+  <img src="https://img.shields.io/badge/PHP-8.1+-777bb4?logo=php&logoColor=white" alt="PHP 8.1+">
   <img src="https://img.shields.io/badge/license-GPL--2.0-green" alt="License">
   <img src="https://img.shields.io/github/downloads/FGcodework/plg_system_fgremovegenerator/total" alt="Downloads">
 </p>

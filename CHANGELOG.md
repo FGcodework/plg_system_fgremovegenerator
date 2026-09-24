@@ -1,5 +1,11 @@
 ﻿# Changelog – plg_system_fgremovegenerator
 
+## 1.5.4 (2026-09-24)
+- Added a "Plugin" info tab with a "Support this plugin" note (Ko-fi + fgcodework.github.io links), matching plg_system_fgemailremover: the `basic` fieldset now holds only a `type="note"` field, rendered by Joomla as the default info tab.
+- Merged all functional fields into a single `settings` fieldset (second tab, labeled "Settings").
+- Removed the unused `FIELDSET_HEADERS` language key.
+- README: added Ko-fi badge + "Support this project" section.
+
 ## 1.5.3 (2026-09-18)
 - Fixed JED naming convention violation: display name changed from "FG - Remove Generator" to "System - FG Remove Generator" (en) / "Systém - FG Odstránenie Generator" (sk). JED requires plugin names in the form "{Type} - {Extension Name}", where {Type} must be the plugin group (System, Content, ...) — not a brand prefix. Matches the convention already used in plg_content_fgautolightbox ("Content - FG AutoLightbox").
 

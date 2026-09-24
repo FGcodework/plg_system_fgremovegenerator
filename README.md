@@ -10,6 +10,7 @@
   <img src="https://img.shields.io/badge/PHP-8.1+-777bb4?logo=php&logoColor=white&color=purple" alt="PHP 8.1+">
   <img src="https://img.shields.io/badge/license-GPL--2.0+-green" alt="License">
   <img src="https://img.shields.io/github/downloads/FGcodework/plg_system_fgremovegenerator/total" alt="Downloads">
+  <a href="https://ko-fi.com/FGcodework"><img src="https://img.shields.io/badge/support-Ko--fi-F16061.svg?logo=ko-fi&logoColor=white" alt="Support on Ko-fi"></a>
 </p>
 
 A native Joomla 5/6 system plugin that removes the Joomla **generator meta tag**
@@ -53,6 +54,12 @@ casual automated scanning).
 This extension ships with a Joomla update server (`updates.xml`) pointing at
 the `master` branch of this repository, so new versions appear under
 **System → Update → Extensions** once installed.
+
+## Support this project
+
+This plugin is free, open source, and always will be — no feature is locked behind a paywall. If it's saved you a scanner-fingerprinting headache, you can leave a one-off tip on Ko-fi. Entirely optional either way.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/FGcodework)
 
 ## License
 

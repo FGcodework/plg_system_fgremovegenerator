@@ -23,66 +23,35 @@
     <updateservers>
         <server type="extension" priority="1" name="FG Remove Generator">https://raw.githubusercontent.com/FGcodework/plg_system_fgremovegenerator/master/updates.xml</server>
     </updateservers>
-    <config>
-        <fields name="params">
-            <fieldset name="basic">
-                <field
-                    name="mode"
-                    type="list"
-                    label="PLG_SYSTEM_FGREMOVEGENERATOR_MODE_LABEL"
-                    description="PLG_SYSTEM_FGREMOVEGENERATOR_MODE_DESC"
-                    default="remove"
-                >
-                    <option value="remove">PLG_SYSTEM_FGREMOVEGENERATOR_MODE_REMOVE</option>
-                    <option value="custom">PLG_SYSTEM_FGREMOVEGENERATOR_MODE_CUSTOM</option>
-                </field>
-                <field
-                    name="custom_text"
-                    type="text"
-                    label="PLG_SYSTEM_FGREMOVEGENERATOR_CUSTOM_TEXT_LABEL"
-                    description="PLG_SYSTEM_FGREMOVEGENERATOR_CUSTOM_TEXT_DESC"
-                    default=""
-                    showon="mode:custom"
-                />
-                <field
-                    name="apply_admin"
-                    type="radio"
-                    layout="joomla.form.field.radio.switcher"
-                    label="PLG_SYSTEM_FGREMOVEGENERATOR_APPLY_ADMIN_LABEL"
-                    description="PLG_SYSTEM_FGREMOVEGENERATOR_APPLY_ADMIN_DESC"
-                    default="0"
-                >
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-            </fieldset>
-            <fieldset
-                name="headers"
-                label="PLG_SYSTEM_FGREMOVEGENERATOR_FIELDSET_HEADERS"
-            >
-                <field
-                    name="remove_x_powered_by"
-                    type="radio"
-                    layout="joomla.form.field.radio.switcher"
-                    label="PLG_SYSTEM_FGREMOVEGENERATOR_REMOVE_XPB_LABEL"
-                    description="PLG_SYSTEM_FGREMOVEGENERATOR_REMOVE_XPB_DESC"
-                    default="1"
-                >
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-                <field
-                    name="remove_x_generator"
-                    type="radio"
-                    layout="joomla.form.field.radio.switcher"
-                    label="PLG_SYSTEM_FGREMOVEGENERATOR_REMOVE_XGEN_LABEL"
-                    description="PLG_SYSTEM_FGREMOVEGENERATOR_REMOVE_XGEN_DESC"
-                    default="0"
-                >
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-            </fieldset>
-        </fields>
-    </config>
+<config>
+    <fields name="params">
+        <fieldset name="basic">
+            <field
+                name="support_note"
+                type="note"
+                label="PLG_SYSTEM_FGREMOVEGENERATOR_FIELD_SUPPORT_LABEL"
+                description="PLG_SYSTEM_FGREMOVEGENERATOR_FIELD_SUPPORT_DESC"
+            />
+        </fieldset>
+        <fieldset name="settings" label="PLG_SYSTEM_FGREMOVEGENERATOR_FIELDSET_SETTINGS">
+            <field name="mode" type="list" label="PLG_SYSTEM_FGREMOVEGENERATOR_MODE_LABEL" description="PLG_SYSTEM_FGREMOVEGENERATOR_MODE_DESC" default="remove">
+                <option value="remove">PLG_SYSTEM_FGREMOVEGENERATOR_MODE_REMOVE</option>
+                <option value="custom">PLG_SYSTEM_FGREMOVEGENERATOR_MODE_CUSTOM</option>
+            </field>
+            <field name="custom_text" type="text" label="PLG_SYSTEM_FGREMOVEGENERATOR_CUSTOM_TEXT_LABEL" description="PLG_SYSTEM_FGREMOVEGENERATOR_CUSTOM_TEXT_DESC" default="" showon="mode:custom" />
+            <field name="apply_admin" type="radio" layout="joomla.form.field.radio.switcher" label="PLG_SYSTEM_FGREMOVEGENERATOR_APPLY_ADMIN_LABEL" description="PLG_SYSTEM_FGREMOVEGENERATOR_APPLY_ADMIN_DESC" default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="remove_x_powered_by" type="radio" layout="joomla.form.field.radio.switcher" label="PLG_SYSTEM_FGREMOVEGENERATOR_REMOVE_XPB_LABEL" description="PLG_SYSTEM_FGREMOVEGENERATOR_REMOVE_XPB_DESC" default="1">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="remove_x_generator" type="radio" layout="joomla.form.field.radio.switcher" label="PLG_SYSTEM_FGREMOVEGENERATOR_REMOVE_XGEN_LABEL" description="PLG_SYSTEM_FGREMOVEGENERATOR_REMOVE_XGEN_DESC" default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+    </fields>
+</config>
 </extension>

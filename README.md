@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/PHP-8.1+-777bb4?logo=php&logoColor=white&color=purple" alt="PHP 8.1+">
   <a href="https://extensions.joomla.org/extension/site-management/seo-a-metadata/fg-remove-generator/"><img src="https://img.shields.io/badge/Joomla!%20Extensions%20Directory%E2%84%A2-RemoveGenerator-blue" alt="JED"></a>
   <img src="https://img.shields.io/badge/license-GPL--2.0+-green" alt="License">
-  <img src="https://img.shields.io/github/downloads/FGcodework/plg_system_fgremovegenerator/total" alt="Downloads">
+  <img src="https://img.shields.io/github/downloads/FGcodework/plg_system_fgremovegenerator/total?color=brown" alt="Downloads">
   <a href="https://ko-fi.com/FGcodework"><img src="https://img.shields.io/badge/support-Ko--fi-F16061.svg?logo=ko-fi&logoColor=white" alt="Support on Ko-fi"></a>
 </p>
 

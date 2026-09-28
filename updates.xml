@@ -7,7 +7,7 @@
         <type>plugin</type>
         <folder>system</folder>
         <client>site</client>
-        <version>1.5.4</version>
+        <version>1.5.5</version>
         <infourl title="FG Remove Generator">https://github.com/FGcodework/plg_system_fgremovegenerator</infourl>
         <targetplatform name="joomla" version="[56]\..*"/>
         <downloads>

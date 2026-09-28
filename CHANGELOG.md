@@ -1,5 +1,9 @@
 ﻿# Changelog – plg_system_fgremovegenerator
 
+## 1.5.5 (2026-09-28)
+- Reworked the "Plugin" tab support note to the shared FG layout: Ko-fi button image + "More FG Extensions" button (Atum-styled), with a scoped style suppressing Joomla's external-link icon on the Ko-fi image.
+- Removed the note's label ("Support this plugin") and its language key.
+
 ## 1.5.4 (2026-09-24)
 - Added a "Plugin" info tab with a "Support this plugin" note (Ko-fi + fgcodework.github.io links), matching plg_system_fgemailremover: the `basic` fieldset now holds only a `type="note"` field, rendered by Joomla as the default info tab.
 - Merged all functional fields into a single `settings` fieldset (second tab, labeled "Settings").

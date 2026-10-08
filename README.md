@@ -1,5 +1,5 @@
 ﻿<p align="center">
-  <img src="assets/logo.png" alt="FG Remove Generator logo" width="128" height="128">
+  <img src="assets/logo.webp" alt="FG Remove Generator logo" width="128" height="128">
 </p>
 
 <h1 align="center">FG Remove Generator</h1>

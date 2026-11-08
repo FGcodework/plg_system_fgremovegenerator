@@ -48,11 +48,14 @@ final class Fgremovegenerator extends CMSPlugin implements SubscriberInterface
      * Removes selected fingerprinting HTTP headers as late as possible in the
      * application lifecycle — right before Joomla sends the HTTP response.
      *
-     * Two places have to be cleaned: headers already registered with PHP (X-Powered-By
-     * from expose_php, raw header() calls) and headers kept in Joomla's own response
-     * object (set with $app->setHeader(), e.g. X-Powered-By: JoomlaAPI/1.0 in the API
-     * application). Joomla sends the latter in respond(), i.e. after this event, so
-     * header_remove() alone does not see them.
+     * Headers can come from three places, so three things are done:
+     *  1. header_remove() for headers already registered with PHP (X-Powered-By from
+     *     expose_php, raw header() calls);
+     *  2. removal from Joomla's own response object (headers set with $app->setHeader()
+     *     before this event);
+     *  3. a header callback, which PHP runs right before the headers go out. Joomla sets
+     *     some headers inside respond(), i.e. after this event (the API application adds
+     *     X-Powered-By: JoomlaAPI/1.0 there), and only the callback still sees those.
      */
     public function onBeforeRespond(BeforeRespondEvent $event): void
     {
@@ -79,23 +82,28 @@ final class Fgremovegenerator extends CMSPlugin implements SubscriberInterface
 
         $app = $event->getApplication();
 
-        if (!method_exists($app, 'getResponse') || !method_exists($app, 'setResponse')) {
-            return;
-        }
+        if (method_exists($app, 'getResponse') && method_exists($app, 'setResponse')) {
+            $response = $app->getResponse();
+            $changed  = false;
 
-        $response = $app->getResponse();
-        $changed  = false;
+            foreach ($names as $name) {
+                if ($response->hasHeader($name)) {
+                    $response = $response->withoutHeader($name);
+                    $changed  = true;
+                }
+            }
 
-        foreach ($names as $name) {
-            if ($response->hasHeader($name)) {
-                $response = $response->withoutHeader($name);
-                $changed  = true;
+            if ($changed) {
+                $app->setResponse($response);
             }
         }
 
-        if ($changed) {
-            $app->setResponse($response);
-        }
+        // PHP allows a single header callback per request; this one replaces any earlier one.
+        header_register_callback(static function () use ($names): void {
+            foreach ($names as $name) {
+                header_remove($name);
+            }
+        });
     }
 
     public function onBeforeCompileHead(BeforeCompileHeadEvent $event): void

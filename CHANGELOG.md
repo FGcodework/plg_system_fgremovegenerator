@@ -1,5 +1,8 @@
 ﻿# Changelog – plg_system_fgremovegenerator
 
+## 1.6.1 (2026-11-08)
+- **Fix:** `X-Powered-By: JoomlaAPI/1.0` of the API application was still sent. Joomla sets it inside `ApiApplication::respond()`, which runs *after* `onBeforeRespond`, so neither `header_remove()` nor the response-object cleanup of 1.6.0 could see it (the 1.6.0 entry below was wrong about this). `onBeforeRespond` now also registers a PHP header callback (`header_register_callback()`) that removes the selected headers right before PHP sends them. Verified on the PHP built-in web server: a header set after the callback was registered is removed, other headers are kept. PHP allows a single header callback per request, so it replaces any callback registered earlier (Joomla core does not use one).
+
 ## 1.6.0 (2026-11-08)
 - **Fix:** HTTP headers set through Joomla's own response object (`$app->setHeader()`) were not removed. Joomla sends them in `respond()`, after `onBeforeRespond`, so `header_remove()` never saw them — for example `X-Powered-By: JoomlaAPI/1.0` of the API application. `onBeforeRespond` now also strips the selected headers from the application's PSR-7 response (`withoutHeader()`), in addition to `header_remove()`.
 - **Fix:** RSS/Atom feeds still disclosed Joomla (`<generator>` element, Atom `uri="https://www.joomla.org"` and version attribute, `<!-- generator="…" -->` comment), because `onBeforeCompileHead` is not fired for feed documents. New switch "Clean RSS/Atom feeds" (default on): the first generator element and comment of the rendered feed are removed, or replaced by the custom text in custom mode; feed items are never touched.

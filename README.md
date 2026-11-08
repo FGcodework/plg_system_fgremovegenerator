@@ -41,7 +41,7 @@ casual automated scanning).
 - Optional: remove the author meta tag (`<meta name="author">`) that Joomla adds to articles when *Show Author Meta Tag* is enabled in Global Configuration
 - Optional: also remove/replace the generator meta tag in the administrator backend (the HTTP headers below are always removed everywhere when enabled, regardless of this setting)
 - Optional, independent toggles for `X-Powered-By`, `X-Generator`
-- Headers are removed on `onBeforeRespond` — right before Joomla sends the HTTP response — both from PHP's header list and from Joomla's own response object (headers set with `$app->setHeader()`, e.g. `X-Powered-By: JoomlaAPI/1.0` of the API application)
+- Headers are removed on `onBeforeRespond` — right before Joomla sends the HTTP response — from PHP's header list and from Joomla's own response object. A PHP header callback then removes them once more just before they are sent, which also catches headers Joomla adds later inside `respond()` (e.g. `X-Powered-By: JoomlaAPI/1.0` of the API application). PHP allows only one header callback per request, so this one replaces any callback registered earlier
 - All handlers run with the lowest event priority, i.e. after other plugins, so nothing registered on the same event can set the generator or a header again
 - PSR-4, `SubscriberInterface`, DI container (`services/provider.php`)
 - Uses concrete, typed Joomla event classes (`BeforeCompileHeadEvent`, `AfterRenderEvent`, `BeforeRespondEvent`) instead of the generic `EventInterface` — requires Joomla 5.0+, not compatible with Joomla 4

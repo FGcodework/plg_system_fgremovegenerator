@@ -5,7 +5,7 @@
     <creationDate>2026-07</creationDate>
     <copyright>(C) 2026 Fero</copyright>
     <license>GNU General Public License version 2 or later</license>
-    <version>1.5.5</version>
+    <version>1.6.0</version>
     <description>PLG_SYSTEM_FGREMOVEGENERATOR_XML_DESCRIPTION</description>
     <namespace path="src">FG\Plugin\System\Fgremovegenerator</namespace>
     <files>
@@ -39,6 +39,14 @@
             </field>
             <field name="custom_text" type="text" label="PLG_SYSTEM_FGREMOVEGENERATOR_CUSTOM_TEXT_LABEL" description="PLG_SYSTEM_FGREMOVEGENERATOR_CUSTOM_TEXT_DESC" default="" showon="mode:custom" />
             <field name="apply_admin" type="radio" layout="joomla.form.field.radio.switcher" label="PLG_SYSTEM_FGREMOVEGENERATOR_APPLY_ADMIN_LABEL" description="PLG_SYSTEM_FGREMOVEGENERATOR_APPLY_ADMIN_DESC" default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="remove_author" type="radio" layout="joomla.form.field.radio.switcher" label="PLG_SYSTEM_FGREMOVEGENERATOR_REMOVE_AUTHOR_LABEL" description="PLG_SYSTEM_FGREMOVEGENERATOR_REMOVE_AUTHOR_DESC" default="0">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="clean_feeds" type="radio" layout="joomla.form.field.radio.switcher" label="PLG_SYSTEM_FGREMOVEGENERATOR_CLEAN_FEEDS_LABEL" description="PLG_SYSTEM_FGREMOVEGENERATOR_CLEAN_FEEDS_DESC" default="1">
                 <option value="0">JNO</option>
                 <option value="1">JYES</option>
             </field>

@@ -1,5 +1,13 @@
 ﻿# Changelog – plg_system_fgremovegenerator
 
+## 1.6.0 (2026-11-08)
+- **Fix:** HTTP headers set through Joomla's own response object (`$app->setHeader()`) were not removed. Joomla sends them in `respond()`, after `onBeforeRespond`, so `header_remove()` never saw them — for example `X-Powered-By: JoomlaAPI/1.0` of the API application. `onBeforeRespond` now also strips the selected headers from the application's PSR-7 response (`withoutHeader()`), in addition to `header_remove()`.
+- **Fix:** RSS/Atom feeds still disclosed Joomla (`<generator>` element, Atom `uri="https://www.joomla.org"` and version attribute, `<!-- generator="…" -->` comment), because `onBeforeCompileHead` is not fired for feed documents. New switch "Clean RSS/Atom feeds" (default on): the first generator element and comment of the rendered feed are removed, or replaced by the custom text in custom mode; feed items are never touched.
+- **Fix:** the language files had two keys run together on one line (`FIELDSET_SETTINGS` and `REMOVE_XGEN_LABEL`), which broke the "Settings" tab label and the X-Generator label parsing. Split into separate lines in en-GB and sk-SK.
+- New optional switch "Remove author meta tag" (default off): removes `<meta name="author">`, added by com_content when "Show Author Meta Tag" is on in Global Configuration.
+- All event handlers now run with the lowest priority (`Priority::MIN`), after every other plugin on the same event, so a later plugin cannot set the generator or a header again.
+- `updates.xml`: added `<php_minimum>` and `<sha256>` of the release package.
+
 ## 1.5.5 (2026-09-28)
 - Reworked the "Plugin" tab support note to the shared FG layout: Ko-fi button image + "More FG Extensions" button (Atum-styled), with a scoped style suppressing Joomla's external-link icon on the Ko-fi image.
 - Removed the note's label ("Support this plugin") and its language key.

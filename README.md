@@ -15,10 +15,11 @@
 </p>
 
 A native Joomla 5/6 system plugin that removes the Joomla **generator meta tag**
-(`<meta name="generator" content="Joomla! - Open Source Content Management">`) and,
-optionally, common **fingerprinting HTTP response headers**:
+(`<meta name="generator" content="Joomla! - Open Source Content Management">`),
+the generator entries of **RSS/Atom feeds** and, optionally, the **author meta tag**
+and common **fingerprinting HTTP response headers**:
 
-- `X-Powered-By` (sent by PHP)
+- `X-Powered-By` (sent by PHP, and by Joomla's own API application)
 - `X-Generator` (sometimes sent by templates/extensions)
 
 ## Why
@@ -36,11 +37,14 @@ casual automated scanning).
 ## Features
 
 - Remove the generator meta tag completely, or replace it with custom text
+- RSS/Atom feeds: removes (or replaces) the `<generator>` element and the `<!-- generator="…" -->` comment that Joomla writes into every feed. The Atom feed also carries a link to joomla.org and, if enabled in Global Configuration, the Joomla version. On by default
+- Optional: remove the author meta tag (`<meta name="author">`) that Joomla adds to articles when *Show Author Meta Tag* is enabled in Global Configuration
 - Optional: also remove/replace the generator meta tag in the administrator backend (the HTTP headers below are always removed everywhere when enabled, regardless of this setting)
 - Optional, independent toggles for `X-Powered-By`, `X-Generator`
-- Headers are removed on `onBeforeRespond` — right before Joomla sends the HTTP response, so nothing set later by a component, plugin, or template slips through
+- Headers are removed on `onBeforeRespond` — right before Joomla sends the HTTP response — both from PHP's header list and from Joomla's own response object (headers set with `$app->setHeader()`, e.g. `X-Powered-By: JoomlaAPI/1.0` of the API application)
+- All handlers run with the lowest event priority, i.e. after other plugins, so nothing registered on the same event can set the generator or a header again
 - PSR-4, `SubscriberInterface`, DI container (`services/provider.php`)
-- Uses concrete, typed Joomla event classes (`BeforeCompileHeadEvent`, `BeforeRespondEvent`) instead of the generic `EventInterface` — requires Joomla 5.0+, not compatible with Joomla 4
+- Uses concrete, typed Joomla event classes (`BeforeCompileHeadEvent`, `AfterRenderEvent`, `BeforeRespondEvent`) instead of the generic `EventInterface` — requires Joomla 5.0+, not compatible with Joomla 4
 - English + Slovak (sk-SK) language files
 
 ## Installation
@@ -48,7 +52,7 @@ casual automated scanning).
 1. Download the latest release ZIP from the [Releases](https://github.com/FGcodework/plg_system_fgremovegenerator/releases) page.
 2. In Joomla admin: **System → Install → Extensions**, upload the ZIP.
 3. Enable the plugin: **System → Manage → Plugins → System - FG Remove Generator**.
-4. Configure mode and header toggles as needed.
+4. Configure mode, feed, author and header toggles as needed.
 
 ## Updates
 
